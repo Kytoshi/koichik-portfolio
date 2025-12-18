@@ -1,20 +1,23 @@
+import { useState } from "react";
 import Hero from "../components/Hero";
+import ProjectSection from "../components/ProjectSection";
 // import Bio from "../components/Bio";
 // import Portfolio from "../components/Portfolio";
 // import Skills from "../components/Skills";
 // import Contact from "../components/Contact";
 
 export default function Home() {
-  return (
-    <div className="bg-black text-white">
-      <Hero />
-      {/* <Bio />
-      <Portfolio />
-      <Skills />
-      <Contact /> */}
+  const [darkMode, setDarkMode] = useState(true);
 
-      <footer className="py-12 text-center text-gray-500 border-t border-zinc-900">
-        <p>© 2025 Koichi Kodama. All rights reserved.</p>
+  return (
+    <div className={darkMode ? "bg-zinc-900" : "bg-stone-100"}>
+      <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
+      <ProjectSection darkMode={darkMode} />
+
+      <footer className={`py-12 text-center border-t transition-colors duration-300 ${
+        darkMode ? "text-stone-500 border-zinc-800" : "text-zinc-500 border-stone-300"
+      }`}>
+        <p>© {new Date().getFullYear()} Koichi Kodama. All rights reserved.</p>
       </footer>
     </div>
   );

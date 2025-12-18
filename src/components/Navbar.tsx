@@ -9,7 +9,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        darkMode ? "bg-black" : "bg-white"
+        darkMode ? "bg-zinc-900" : "bg-stone-100"
       }`}>
       <div className='max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-6'>
         <div className='flex items-center justify-between'>
@@ -21,7 +21,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
             <img
               src='/logo.png'
               alt='Koichi Kodama Logo'
-              className='w-10 h-10 md:w-40 md:h-40 object-contain'
+              className='w-20 h-20 md:w-32 md:h-32 lg:w-36 lg:h-36 object-contain'
             />
           </a>
 
@@ -31,7 +31,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
             <a
               href='/'
               className={`text-sm md:text-base font-light tracking-wide transition-opacity duration-300 hover:opacity-60 ${
-                darkMode ? "text-white" : "text-black"
+                darkMode ? "text-stone-100" : "text-zinc-900"
               }`}
               style={{ fontFamily: "'Jost', sans-serif" }}>
               Projects
@@ -39,7 +39,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
             <a
               href='#about'
               className={`text-sm md:text-base font-light tracking-wide transition-opacity duration-300 hover:opacity-60 ${
-                darkMode ? "text-white" : "text-black"
+                darkMode ? "text-stone-100" : "text-zinc-900"
               }`}
               style={{ fontFamily: "'Jost', sans-serif" }}>
               About
@@ -47,7 +47,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
             <a
               href='#resume'
               className={`text-sm md:text-base font-light tracking-wide transition-opacity duration-300 hover:opacity-60 ${
-                darkMode ? "text-white" : "text-black"
+                darkMode ? "text-stone-100" : "text-zinc-900"
               }`}
               style={{ fontFamily: "'Jost', sans-serif" }}>
               Resume
@@ -57,7 +57,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
             <button
               onClick={toggleDarkMode}
               className={`text-sm md:text-base font-light tracking-wide transition-opacity duration-300 hover:opacity-60 ${
-                darkMode ? "text-white" : "text-black"
+                darkMode ? "text-stone-100" : "text-zinc-900"
               }`}
               style={{ fontFamily: "'Jost', sans-serif" }}
               aria-label='Toggle dark mode'>

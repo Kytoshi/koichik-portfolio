@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 
-export default function PortfolioHero() {
+interface HeroProps {
+  darkMode: boolean;
+  setDarkMode: (value: boolean) => void;
+}
+
+export default function PortfolioHero({ darkMode, setDarkMode }: HeroProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -57,6 +61,10 @@ export default function PortfolioHero() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap');
 
+        html {
+          scroll-behavior: smooth;
+        }
+
         @keyframes blink {
           0%, 50% {
             opacity: 1;
@@ -73,7 +81,7 @@ export default function PortfolioHero() {
 
       <div
         className={`min-h-screen w-full relative overflow-hidden transition-colors duration-300 ${
-          darkMode ? "bg-black" : "bg-white"
+          darkMode ? "bg-zinc-900" : "bg-stone-100"
         }`}>
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
@@ -83,7 +91,7 @@ export default function PortfolioHero() {
           <div className='w-full'>
             <h1
               className={`text-6xl md:text-7xl lg:text-8xl font-semi tracking-wide mb-8 transition-all duration-1000 ${
-                darkMode ? "text-white" : "text-black"
+                darkMode ? "text-stone-100" : "text-zinc-900"
               } ${
                 isVisible
                   ? "opacity-100 translate-y-0"
@@ -94,7 +102,7 @@ export default function PortfolioHero() {
 
             <div
               className={`text-2xl md:text-3xl lg:text-4xl font-light tracking-wide transition-all duration-1000 delay-300 ${
-                darkMode ? "text-gray-400" : "text-gray-600"
+                darkMode ? "text-stone-400" : "text-zinc-600"
               } ${
                 isVisible
                   ? "opacity-100 translate-y-0"
@@ -106,6 +114,23 @@ export default function PortfolioHero() {
                   |
                 </span>
               </p>
+            </div>
+
+            <div
+              className={`mt-20 md:mt-24 transition-all duration-1000 delay-500 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}>
+              <a
+                href='#projects'
+                className={`inline-block px-8 py-3 border transition-all duration-300 ${
+                  darkMode
+                    ? "border-stone-100 text-stone-100 hover:bg-stone-100 hover:text-zinc-900"
+                    : "border-zinc-900 text-zinc-900 hover:bg-zinc-900 hover:text-stone-100"
+                }`}>
+                View Projects
+              </a>
             </div>
           </div>
         </div>
