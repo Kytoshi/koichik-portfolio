@@ -14,7 +14,7 @@ export default function Home() {
       <Contact /> */}
 
       <footer className="py-12 text-center text-gray-500 border-t border-zinc-900">
-        <p>© 2024 Your Name. All rights reserved.</p>
+        <p>© 2025 Koichi Kodama. All rights reserved.</p>
       </footer>
     </div>
   );
