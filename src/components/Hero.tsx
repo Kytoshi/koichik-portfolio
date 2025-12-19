@@ -96,7 +96,7 @@ export default function PortfolioHero({ darkMode, setDarkMode }: HeroProps) {
                   : "opacity-0 translate-y-8"
               }`}>
               <span className={darkMode ? "text-stone-100" : "text-zinc-900"}>
-                I'm a&nbsp;
+                & I'm a&nbsp;
               </span>
               <div
                 className='overflow-hidden relative'
@@ -128,17 +128,53 @@ export default function PortfolioHero({ darkMode, setDarkMode }: HeroProps) {
               }`}>
               <a
                 href='#projects'
-                className='group inline-flex justify-center items-center gap-3 w-60 h-20 rounded-full bg-zinc-800 cursor-pointer transition-all duration-[450ms] ease-in-out hover:bg-gradient-to-b hover:from-purple-400 hover:to-purple-600 hover:shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,0.4),inset_0px_-4px_0px_0px_rgba(0,0,0,0.2),0px_0px_0px_4px_rgba(255,255,255,0.2),0px_0px_180px_0px_#9917FF] hover:-translate-y-0.5'>
-                <svg
-                  height='24'
-                  width='24'
-                  fill='#AAAAAA'
-                  viewBox='0 0 24 24'
-                  className='transition-all duration-[800ms] ease-in-out group-hover:fill-white group-hover:scale-110'>
-                  <path d='M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z'></path>
-                </svg>
-                <span className='font-semibold text-base text-gray-400 transition-all duration-[800ms] ease-in-out group-hover:text-white'>
+                className={`group relative inline-flex items-center gap-2 px-8 py-3 border overflow-hidden transition-all duration-300 ${
+                  darkMode
+                    ? "border-stone-100 text-stone-100"
+                    : "border-zinc-900 text-zinc-900"
+                }`}>
+                <span className='relative z-10 transition-transform duration-300 group-hover:translate-x-1'>
                   View Projects
+                </span>
+                <svg
+                  className='relative z-10 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'>
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M9 5l7 7-7 7'
+                  />
+                </svg>
+                <span
+                  className={`absolute inset-0 translate-x-[-100%] transition-transform duration-300 group-hover:translate-x-0 ${
+                    darkMode ? "bg-stone-100" : "bg-zinc-900"
+                  }`}
+                />
+                <span
+                  className={`absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 ${
+                    darkMode ? "text-zinc-900" : "text-stone-100"
+                  }`}
+                  style={{ zIndex: 11 }}>
+                  <span className='flex items-center justify-center h-full gap-2'>
+                    <span className='transition-transform duration-300 group-hover:translate-x-1'>
+                      View Projects
+                    </span>
+                    <svg
+                      className='w-4 h-4 transition-transform duration-300 group-hover:translate-x-1'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'>
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth={2}
+                        d='M9 5l7 7-7 7'
+                      />
+                    </svg>
+                  </span>
                 </span>
               </a>
             </div>
