@@ -25,7 +25,7 @@ export default function ProjectSection({ darkMode }: ProjectSectionProps) {
     {
       id: 2,
       title: "Vehicle & Equipment Management System",
-      skills: ["Figma"],
+      skills: ["Figma", "UX Research"],
       image: "/Projects/SMC/VEMS/VemsTN.png",
       link: "#",
     },
